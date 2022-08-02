@@ -1,0 +1,35 @@
+{
+    "pages":[
+      "pages/home/home",
+      "pages/maps/maps",
+      "pages/center/center"
+    ],
+    "window":{
+      "backgroundTextStyle":"light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "便民核酸",
+      "navigationBarTextStyle":"black"
+    },
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/home/home",
+            "text": "首页",
+            "iconPath": "images/shouye.png",
+            "selectedIconPath": "images/shouyetianchong.png"
+        },
+        {
+            "pagePath": "pages/maps/maps",
+            "text": "地图",
+            "iconPath": "images/dituleiditu.png",
+            "selectedIconPath": "images/ditu.png"
+        },
+        {
+            "pagePath": "pages/center/center",
+            "text": "个人中心",
+            "iconPath": "images/gerenzhongxin.png",
+            "selectedIconPath": "images/gerenzhongxin_1.png"
+        }]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json" 
+}

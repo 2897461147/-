@@ -1,0 +1,2 @@
+<!--pages/maps/maps.wxml-->
+<text>maps中写核酸检测点的信息，以及地图显示，在地图中点击后会跳转，然后出现路程规划</text>
