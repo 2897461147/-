@@ -5,8 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    jingdu:"",
+    weidu:"",
+    dizhi:"11",
+    mingcheng:"",
   },
+  getlocal(){
+    var that=this
+    wx.getLocation({
+      success:function (res){
+        console.log(res)
+        that.setData({
+          jingdu:res.longitude,
+          weidu:res.latitude,
+        })
+      }
+    })
+  },
+  chakanweizhi(e){
+  wx.openLocation({
+    latitude:Number(e.detail.value.weidu),
+    longitude:Number(e.detail.value.jingdu)
+  })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载

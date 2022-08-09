@@ -20,6 +20,7 @@
         {
             "pagePath": "pages/maps/maps",
             "text": "地图",
+
             "iconPath": "images/dituleiditu.png",
             "selectedIconPath": "images/ditu.png"
         },
@@ -30,6 +31,17 @@
             "selectedIconPath": "images/gerenzhongxin_1.png"
         }]
     },
+
+
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    },
+
+
+
     "style": "v2",
+
     "sitemapLocation": "sitemap.json" 
 }

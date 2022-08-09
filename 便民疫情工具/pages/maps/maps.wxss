@@ -1,1 +1,11 @@
 /* pages/maps/maps.wxss */
+pages{
+    padding:10px;
+    box-sizing: border-box;
+}
+input{
+    border: 1px solid gainsboro;
+}
+button{
+    margin-top: 10px;
+}
