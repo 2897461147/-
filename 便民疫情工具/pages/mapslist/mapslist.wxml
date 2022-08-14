@@ -1,0 +1,9 @@
+<!--pages/mapslist/mapslist.wxml-->
+<demo-search bindevent="handleEvent"></demo-search>
+<sticky-view>111</sticky-view>
+<view class="box" wx:for="{{cityList}}" wx:key="index">
+    <view class="namebox" >
+        {{item.title}}
+    </view>
+    <view class="telbox">电话：{{item.tel}}</view>
+</view>

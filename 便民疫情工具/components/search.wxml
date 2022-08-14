@@ -1,0 +1,1 @@
+<input placeholder="搜索" bindtap="handleTap"></input>

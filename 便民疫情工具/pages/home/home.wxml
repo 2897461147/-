@@ -1,6 +1,11 @@
 <!--pages/home/home.wxml-->
-<text>首页展示全国疫情情况</text>
+<text>首页展示全国疫情情况（后端ajax的用法）
+目的网址https://voice.baidu.com/act/newpneumonia/newpneumonia</text>
 <text>
-来个选项栏
+    中间含有核酸检测点（点击可跳转个列表页，
+    核酸信息查询跳转到另一个小程序中
 
-中间含有核酸检测点，核酸信息查询，核酸信息码的填写，</text>
+    核酸信息码的填写，form表单基本信息，其中要有检错机制，保证输入正确，提交就会生成表单二维码
+
+
+</text>

@@ -1,5 +1,4 @@
-// pages/center/center.js
-
+// pages/addList/addList.js
 Page({
 
   /**
@@ -12,9 +11,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function (options) {
 
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -62,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  handleCheck(){
-    wx.navigateTo({
-      url:'/pages/auth/auth',
-    })
   }
 })

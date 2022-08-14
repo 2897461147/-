@@ -64,15 +64,15 @@ Page({
 
   },
   handleAuth(){
-     wx.getUserProfile({
-       desc: '用于完善会员资料',
-       success:(res)=>{
-         console.log(res.userInfo)
-         wx.setStorageSync('token', res.userInfo)
-         wx.navigateTo({
-           url: '/pages/personal/personal',
-         })
-       }
-     })
+    wx.getUserProfile({
+      desc: '用于完善会员资料',
+      success:(res)=>{
+        console.log(res.userInfo)
+        wx.setStorageSync('token', res.userInfo)
+        wx.navigateTo({
+          url: '/pages/personal/personal',
+        })
+      }
+    })
   }
 })

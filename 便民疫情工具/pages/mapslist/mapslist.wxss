@@ -1,0 +1,10 @@
+/* pages/mapslist/mapslist.wxss */
+.box{
+
+}
+.namebox{
+    padding: 20rpx;
+}
+.telbox{
+
+}

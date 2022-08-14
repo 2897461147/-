@@ -1,22 +1,2 @@
 <!--pages/maps/maps.wxml-->
-<form bindsubmit="chakanweizhi">
-<view>
-    经度<input type="text" name="jingdu" value="{{jingdu}}"></input>
-</view>
-<view>
-    维度<input type="text" name="weidu" value="{{weidu}}"></input>
-</view>
-<view>
-    地址<input type="text" name="dizhi" value="{{dizhi}}"></input>
-</view>
-<view>
-    名称<input type="text" name="mingcheng" value="{{mingcheng}}"></input>
-</view>
-
-
-
-<view>
-    <button type ="primary" bindtap="getlocal">获取经纬度</button>
-    <button type ="primary" form-type="submit">查看地图位置</button>
-</view>
-</form>
+<button bindtap="showMap">点击打开地图</button>
