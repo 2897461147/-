@@ -1,1 +1,11 @@
 /* pages/center/center.wxss */
+.avatar{
+  width: 100vw;
+  height: 300rpx;
+  background-color: #42bd56;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
