@@ -19,7 +19,7 @@ Page({
       method: 'GET',
 
     },true).then(res=>{
-      //console.log(res)
+      console.log(res)
       this.total=Number(res.total)
       this.setData({
         cityList: [...this.data.cityList, ...res.list.result.data]
@@ -78,11 +78,8 @@ Page({
     if(this.data.cityList.length>this.total){
       return
     }
-
-    //console.log("daoji")
     this.current++
     this.getList()
-
   },
 
   /**
@@ -93,5 +90,16 @@ Page({
   },
   handleEvent(){
     console.log("111")
+  },
+  changePage: function (evt) {
+    //console.log(evt.currentTarget.dataset.id)
+    var id =evt.currentTarget.dataset.id
+    var name=evt.currentTarget.dataset.name
+    var lat=evt.currentTarget.dataset.lat
+    var lng=evt.currentTarget.dataset.lng
+    wx.navigateTo({
+
+      url: `/pages/mapdetail/mapdetail?ud_id=${id}&name=${name}&lat=${lat}&lng=${lng}`
+    })
   }
 })

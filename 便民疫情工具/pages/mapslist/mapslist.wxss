@@ -1,10 +1,10 @@
 /* pages/mapslist/mapslist.wxss */
 .box{
-
+    padding: 10rpx;
 }
 .namebox{
     padding: 20rpx;
 }
 .telbox{
-
+    padding: 10rpx;
 }

@@ -5,7 +5,8 @@
       "pages/center/center",
       "pages/mapslist/mapslist",
       "pages/auth/auth",
-      "pages/personal/personal"
+      "pages/personal/personal",
+      "pages/mapdetail/mapdetail"
     ],
     "window":{
       "backgroundTextStyle":"dark",
@@ -40,6 +41,10 @@
       "chooseLocation": {
       "version": "1.0.9",
       "provider": "wx76a9a06e5b4e693e"
+      },
+      "routePlan": {
+        "version": "1.0.19",
+        "provider": "wx50b5593e81dd937a"
       }
     },
   "permission": {
@@ -48,11 +53,11 @@
     }
   },
 
-
-
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
-  }
+  },
+  "lazyCodeLoading": "requiredComponents"
+
 }

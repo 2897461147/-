@@ -1,11 +1,13 @@
-<!--pages/home/home.wxml-->
-<text>首页展示全国疫情情况（后端ajax的用法）
-目的网址https://voice.baidu.com/act/newpneumonia/newpneumonia</text>
-<text>
-    中间含有核酸检测点（点击可跳转个列表页，
-    核酸信息查询跳转到另一个小程序中
+<view class="content">
+    <image src="/images/tit.jpg" mode="widthFix"/>
+    <view class="content2">
+        <view class="content2" style="background-color:#FFE4B5">填写个人信息</view>
+        <view class="content2" style="background-color:#F5DEB3">核酸检测点</view>
+    </view>
+    <view class="content2">
+        <view class="content2" style="background-color:#FFC1C1;">查询检测信息</view>
+        <view class="content2" style="background-color:#98FB98">健康码出示</view>
+    </view>
+    <image src="/images/doctor.png" mode="widthFix"/>
 
-    核酸信息码的填写，form表单基本信息，其中要有检错机制，保证输入正确，提交就会生成表单二维码
-
-
-</text>
+</view>

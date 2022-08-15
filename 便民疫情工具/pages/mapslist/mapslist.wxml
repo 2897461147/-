@@ -1,7 +1,6 @@
 <!--pages/mapslist/mapslist.wxml-->
 <demo-search bindevent="handleEvent"></demo-search>
-<sticky-view>111</sticky-view>
-<view class="box" wx:for="{{cityList}}" wx:key="index">
+<view class="box" wx:for="{{cityList}}" wx:key="index" bindtap="changePage" data-id="{{item.ud_id}}" data-name="{{item.address}}" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}">
     <view class="namebox" >
         {{item.title}}
     </view>
