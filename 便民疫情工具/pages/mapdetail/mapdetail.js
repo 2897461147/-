@@ -28,12 +28,12 @@ Page({
     })
   },
   gotoHere(evt){
-    var name=evt.currentTarget.dataset.name
+    var name=String(evt.currentTarget.dataset.name)
     var lat=evt.currentTarget.dataset.lat
     var lng=evt.currentTarget.dataset.lng
     console.log(name,lat,lng)
     wx.navigateTo({
-      url: `/pages/maproute/maproute?&name=${name}&lat=${lat}&lng=${lng}`
+      url: "/pages/maproute/maproute?&name="+name+"&lat="+lat+"&lng="+lng
     })
   },
 

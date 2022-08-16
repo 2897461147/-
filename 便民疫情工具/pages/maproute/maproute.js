@@ -1,5 +1,5 @@
 // pages/maproute/maproute.js
-let plugin = requirePlugin('routePlan');
+
 
 Page({
   /**
@@ -11,7 +11,7 @@ Page({
     lng:0
   },
 handledSetdata(lng,lat,name){
-
+  let plugin = requirePlugin('routePlan');
   let key = 'YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX';  //使用在腾讯位置服务申请的key
   let referer = '找核酸检测点';   //调用插件的app的名称
   let endPoint = JSON.stringify({  //终点
@@ -19,16 +19,16 @@ handledSetdata(lng,lat,name){
     'latitude': lat,
     'longitude': lng
   });
-  let mode ="driving"
 
   wx.navigateTo({
-    url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint + '&mode' + mode
+    url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
   });
 },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(options.name)
     this.handledSetdata(options.lng,options.lat,options.name)
   },
 
@@ -58,9 +58,7 @@ handledSetdata(lng,lat,name){
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-    wx.navigateTo({
-      url:'/pages/mapslist/mapslist'
-    })
+
   },
 
   /**

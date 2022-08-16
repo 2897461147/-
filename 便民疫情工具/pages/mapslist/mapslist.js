@@ -9,10 +9,8 @@ Page({
   data: {
     cityList:[]
   },
-   
   current: 1,
   total:0,
-
   getList(format, data){
     request({
       url: `/list?table_id=0oLe5K1g-3yZh7TvZ1&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
@@ -26,6 +24,9 @@ Page({
       }, data)
     })
   },
+  handleTap(){
+    this.triggerEvent("event")
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -88,9 +89,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleEvent(){
-    console.log("111")
-  },
+
   changePage: function (evt) {
     //console.log(evt.currentTarget.dataset.id)
     var id =evt.currentTarget.dataset.id
@@ -98,7 +97,6 @@ Page({
     var lat=evt.currentTarget.dataset.lat
     var lng=evt.currentTarget.dataset.lng
     wx.navigateTo({
-
       url: `/pages/mapdetail/mapdetail?ud_id=${id}&name=${name}&lat=${lat}&lng=${lng}`
     })
   }

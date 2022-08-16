@@ -8,3 +8,16 @@
 .telbox{
     padding: 10rpx;
 }
+input{
+  border: 2rpx solid black;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  padding: 10rpx;
+  height: 10rpx;
+ 
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: rgb(144, 151, 144);
+
+}

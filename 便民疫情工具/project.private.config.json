@@ -23,6 +23,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mapslist/mapslist",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mapslist/mapslist",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
