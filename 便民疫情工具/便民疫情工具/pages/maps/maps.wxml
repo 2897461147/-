@@ -1,2 +1,0 @@
-<!--pages/maps/maps.wxml-->
-<button bindtap="showMap">点击打开地图</button>
