@@ -1,0 +1,17 @@
+<!--pages/personal/personal.wxml-->
+<view class="avatar">
+    <image src="{{userInfo.avatarUrl}}" bindtap="handleChange"></image>
+    <view>{{userInfo.nickName}}</view>
+</view>
+<mp-cells ext-class="my-cells">
+    <mp-cell value="健康码" >
+        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleTap"></mp-icon>
+    </mp-cell>
+    <mp-cell value="个人行程码">
+        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleTap"></mp-icon>
+    </mp-cell>
+    <mp-cell value="核算信息码">
+        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleCheckin"></mp-icon>
+    </mp-cell>
+
+</mp-cells>
