@@ -65,16 +65,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleTap(){
-    wx.navigateToMiniProgram({
-      appId: 'wx65e2741d921d61bb',
-      path: 'page/index/index?id=123',
-    })
-  },
-  /*handleCheckin(){
-    wx.navigateTo({
-      url: '/pages/addlist/addlist',
-    })
-  }* (注：写好addlist页面就取消注释就可以跳转了)*/
+handleTap(){
+  wx.navigateToMiniProgram({
+    appId: 'wx65e2741d921d61bb',
+    path: 'page/index/index?id=123',
+  })
+},
+handleCheckin(){
+  wx.navigateTo({
+    url: '/pages/addlist/addList',
+  })
+}
 
 })
