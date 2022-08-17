@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+      "search":"../../components/search/Search",
+      "mp-sticky": "@miniprogram-component-plus/sticky"
+  },
   "enablePullDownRefresh": true
 }

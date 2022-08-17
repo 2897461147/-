@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    mytext:"",
     cityList:[]
   },
   current: 1,
@@ -24,8 +25,12 @@ Page({
       }, data)
     })
   },
-  handleTap(){
-    this.triggerEvent("event")
+  handleTap(ev){
+    // console.log(ev.detail.value)
+    // this.triggerEvent("event"),
+    this.setData({
+        mytext:ev.detail.value
+    })
 },
   /**
    * 生命周期函数--监听页面加载
@@ -99,5 +104,11 @@ Page({
     wx.navigateTo({
       url: `/pages/mapdetail/mapdetail?ud_id=${id}&name=${name}&lat=${lat}&lng=${lng}`
     })
+  },
+  handleEvent(){
+      console.log("搜索处理")
+      wx.navigateTo({
+        url: '/pages/search/search',
+      })
   }
 })

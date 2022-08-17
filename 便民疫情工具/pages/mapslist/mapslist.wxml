@@ -1,8 +1,15 @@
 <!--pages/mapslist/mapslist.wxml-->
-<input placeholder="搜索" bindtap="handleTap"></input>
-<view class="box" wx:for="{{cityList}}" wx:key="index" bindtap="changePage" data-id="{{item.ud_id}}" data-name="{{item.address}}" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}">
+<view>
+<!-- <input placeholder="搜索" bindtap="handleTap"></input> -->
+<mp-sticky offset-top="0">
+<view style="width: 100vw;" >
+<search bindevent="handleEvent"></search>
+</view>
+</mp-sticky>
+  <view class="box" wx:for="{{cityList}}" wx:key="index" bindtap="changePage" data-id="{{item.ud_id}}" data-name="{{item.address}}" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}"> 
     <view class="namebox" >
         {{item.title}}
     </view>
     <view class="telbox">电话：{{item.tel}}</view>
+</view>
 </view>
