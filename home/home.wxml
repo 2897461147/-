@@ -1,0 +1,25 @@
+<view class="content">
+    <image src="https://636c-cloud1-2g43oyra905ad481-1309792361.tcb.qcloud.la/tit.jpg?sign=56c961c58f1716b1cd97b9b7badbe6fe&t=1660900653" mode="widthFix"/>
+    <view class="content2">
+      <button class='btn1' open-type='write'>
+        <image class='btnImg' src='../../images/write.png'></image>
+        <view>填写个人信息</view>
+      </button>
+      <button class='btn2' open-type='map'>
+        <image class='btnImg' src='../../images/map.png'></image>
+        <view>核酸检测点</view>
+      </button>
+    </view>
+    <view class="content2">
+      <button class='btn3' open-type='search'>
+        <image class='btnImg' src='../../images/search.png'></image>
+        <view>查询检测信息</view>
+      </button>
+      <button class='btn4' open-type='show'>
+        <image class='btnImg' src='../../images/show.png'></image>
+        <view>健康码出示</view>
+      </button>
+    </view>
+    <image src="https://636c-cloud1-2g43oyra905ad481-1309792361.tcb.qcloud.la/doctor.png?sign=0be2af1e9f4d02ce1df513832e266145&t=1660900700" mode="widthFix"/>
+
+</view>
