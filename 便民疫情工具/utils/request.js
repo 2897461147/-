@@ -1,6 +1,5 @@
 function request(params,isHeader=false){
     return new Promise((resolve,reject)=>{
-
             wx.request({
             ...params,
             url:'https://apis.map.qq.com/place_cloud/data'+params.url,
@@ -9,7 +8,6 @@ function request(params,isHeader=false){
                 resolve({
                     list:res.data,
                     total:res.data.result.count
-
                 })}else {
                 resolve(res.data)
                 }

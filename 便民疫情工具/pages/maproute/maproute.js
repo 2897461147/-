@@ -36,8 +36,7 @@ handledSetdata(lng,lat,name){
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    this.handledSetdata()
-
+   // this.handledSetdata()
   },
   /**
    * 生命周期函数--监听页面显示

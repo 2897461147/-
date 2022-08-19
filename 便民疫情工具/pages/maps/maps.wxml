@@ -1,2 +1,5 @@
 <!--pages/maps/maps.wxml-->
-<button bindtap="showMap">点击打开地图</button>
+
+<map style="width:100%;height:900rpx" bindmarkertap="" markers="{{markers}}" longitude="{{markers[0].longitude}}" latitude="{{markers[0].latitude}}"></map>
+<button type="primary" size="mini" bindtap="getPlace">查看附近的核酸检测点</button>
+<button type="primary" size="mini" bindtap="searchArea">ca</button>

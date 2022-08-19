@@ -7,8 +7,14 @@
       "pages/auth/auth",
       "pages/personal/personal",
       "pages/mapdetail/mapdetail",
-      "pages/maproute/maproute",
-      "pages/search/search"
+      "pages/maproute/maproute"
+    ],
+    "requiredPrivateInfos":[
+ 
+      "getLocation",
+   
+      "chooseAddress"
+   
     ],
     "window":{
       "backgroundTextStyle":"dark",
@@ -24,10 +30,15 @@
             "selectedIconPath": "images/shouyetianchong.png"
         },
         {
+          "pagePath": "pages/mapslist/mapslist",
+          "text": "地图列表",
+          "iconPath": "images/dituleiditu.png",
+          "selectedIconPath": "images/ditu.png"
+      },
+        {
 
             "pagePath": "pages/maps/maps",
             "text": "地图",
-
             "iconPath": "images/dituleiditu.png",
             "selectedIconPath": "images/ditu.png"
         },
@@ -60,9 +71,6 @@
   "useExtendedLib": {
     "weui": true
   },
-  "lazyCodeLoading": "requiredComponents",
-  "useExtendeLib":{
-    "weui":true
-  }
+  "lazyCodeLoading": "requiredComponents"
 
 }

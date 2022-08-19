@@ -18,6 +18,6 @@ input{
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
-  /* background-color: rgb(144, 151, 144); */
+  background-color: rgb(144, 151, 144);
 
 }

@@ -10,8 +10,10 @@ Page({
   data: {
     lng:0,
     lat:0,
-    name:'11'
+    name:'11',
+    markers:[]
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -24,7 +26,28 @@ Page({
     this.setData({
         lng:Number(options.lng),
         lat:Number(options.lat),
-        name:options.name
+        name:options.name,
+        markers:[
+          {
+            id:1,
+            latitude: options.lat,
+            longitude: options.lng,
+            iconPath:"../../images/地图-地标.png",
+            width:30,
+            height:35,
+            callout:{
+              width:50,
+              height:40,
+              content:options.name,
+              color:'red',
+              fontsize:20,
+              borderRadius:5,
+              borderWidth:1,
+              borderColor:'white',
+              padding:2,
+              display:'ALWAYS'
+            }
+          }]
     })
   },
   gotoHere(evt){

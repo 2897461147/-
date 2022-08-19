@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mytext:"",
     cityList:[]
   },
   current: 1,
@@ -16,7 +15,6 @@ Page({
     request({
       url: `/list?table_id=0oLe5K1g-3yZh7TvZ1&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
       method: 'GET',
-
     },true).then(res=>{
       console.log(res)
       this.total=Number(res.total)
@@ -25,13 +23,10 @@ Page({
       }, data)
     })
   },
-  handleTap(ev){
-    // console.log(ev.detail.value)
-    // this.triggerEvent("event"),
-    this.setData({
-        mytext:ev.detail.value
-    })
+  handleTap(){
+    this.triggerEvent("event")
 },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -104,11 +99,5 @@ Page({
     wx.navigateTo({
       url: `/pages/mapdetail/mapdetail?ud_id=${id}&name=${name}&lat=${lat}&lng=${lng}`
     })
-  },
-  handleEvent(){
-      console.log("搜索处理")
-      wx.navigateTo({
-        url: '/pages/search/search',
-      })
   }
 })
