@@ -2,12 +2,11 @@
     "pages": [
       "pages/home/home",
       "pages/maps/maps",
-      "pages/center/center",
       "pages/mapslist/mapslist",
-      "pages/auth/auth",
       "pages/personal/personal",
       "pages/mapdetail/mapdetail",
-      "pages/maproute/maproute"
+      "pages/maproute/maproute",
+      "pages/addList/addList"
     ],
     "requiredPrivateInfos":[
  
@@ -43,7 +42,7 @@
             "selectedIconPath": "images/ditu.png"
         },
         {
-            "pagePath":"pages/center/center",
+            "pagePath":"pages/personal/personal",
             "text": "个人中心",
             "iconPath": "images/gerenzhongxin.png",
             "selectedIconPath": "images/gerenzhongxin_1.png"

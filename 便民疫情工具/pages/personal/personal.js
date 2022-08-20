@@ -1,3 +1,5 @@
+//import CheckAuth from '../../utils/auth.js'//
+
 // pages/personal/personal.js
 Page({
 
@@ -12,20 +14,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    
+   },
+    
 
-  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
     this.setData({
       userInfo:wx.getStorageSync('token')
     })
@@ -42,7 +47,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+   
   },
 
   /**
@@ -65,16 +70,31 @@ Page({
   onShareAppMessage: function () {
 
   },
+  login(){
+    wx.getUserProfile({
+      desc: '用于完善会员资料',
+      success: res=>{
+        let user=res.userInfo
+        console.log("用户信息",user)
+        this.setData({
+          userInfo: user
+        })
+      },
+      fail: res=>{
+        console.log("授权失败",res)
+      }
+    })
+  },
   handleTap(){
     wx.navigateToMiniProgram({
       appId: 'wx65e2741d921d61bb',
       path: 'page/index/index?id=123',
     })
   },
-  /*handleCheckin(){
+  handleCheckin(){
     wx.navigateTo({
-      url: '/pages/addlist/addlist',
+      url: '/pages/addList/addList',
     })
-  }* (注：写好addlist页面就取消注释就可以跳转了)*/
+  }
 
 })

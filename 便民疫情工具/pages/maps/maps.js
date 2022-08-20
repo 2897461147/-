@@ -1,3 +1,5 @@
+
+
 // pages/maps/maps.js
 const chooseLocation = requirePlugin('chooseLocation');
 Page({
@@ -51,6 +53,7 @@ getPlace(){
       }
     },
   })
+  
 },
 searchArea(){
   let lat;

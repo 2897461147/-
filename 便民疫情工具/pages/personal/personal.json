@@ -4,5 +4,6 @@
     "mp-cell": "weui-miniprogram/cell/cell",
     "mp-icon": "weui-miniprogram/icon/icon"
 
-  }
+  },
+  "navigationBarTitleText": "便民核酸"
 }
