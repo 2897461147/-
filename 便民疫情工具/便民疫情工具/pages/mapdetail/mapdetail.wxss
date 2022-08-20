@@ -1,0 +1,6 @@
+/* pages/mapdetail/mapdetail.wxss */
+map{
+    width: 100%;
+    height: 1000rpx;
+}
+
