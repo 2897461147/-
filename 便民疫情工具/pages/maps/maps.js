@@ -1,7 +1,18 @@
-
-
 // pages/maps/maps.js
-const chooseLocation = requirePlugin('chooseLocation');
+//const chooseLocation = requirePlugin('chooseLocation');
+let comm=require("../../utils/comm");
+let disMin = Infinity;
+let latMin=0;
+let lngMin=0;
+let indexMin=0;
+let titleMin="";
+let dirMin="";
+
+let index=0;
+let lat=0;
+let lng=0;
+let name="";
+
 Page({
 
   /**
@@ -12,73 +23,92 @@ Page({
     markers:[],
     lat:35.252512,
     lng:115.417827,
-
   },
-
-
 getPlace(){
+  var name=titleMin
+  var lat=latMin
+  var lng=lngMin
+  console.log(name,lat,lng)
+  wx.navigateTo({
+    url: "/pages/maproute/maproute?&name="+name+"&lat="+lat+"&lng="+lng
+  })
+},
+searchArea(){
   var that =this;
   var latitude= this.data.markers[0].latitude;
   var longitude=this.data.markers[0].longitude;
   wx.request({
-    url:'https://apis.map.qq.com/place_cloud/data/list?table_id=0oLe5K1g-3yZh7TvZ1&orderby=id&page_index=1&page_size=46&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX',
-    success:function (res){
-      console.log(res.data.result)
-      var result=res.data.result.data
-      
-      for(var i=0;i<result.length;i++){
-        let lat=result[i].location.lat;
-        let lng=result[i].location.lng;
-        var index="markers["+(i+1)+"]";
-        that.setData({
-          [index]:{
-            id:1+i,
-            latitude:lat,
-            longitude:lng,
-            iconPath:"../../images/地图.png",
-            width:30,
-            height:30,
-            callout: {
-              content:result[i].title,
-              color: 'red',
-              fontsize: 20,
-              borderRadius: 5,
-              borderWidth: 1,
-              borderColor: 'white',
-              padding: 2,
-              display:'BYCLICK'
-            }
-          }
-        })
-      }
-    },
-  })
-  
-},
-searchArea(){
-  let lat;
-  let lng;
-  wx.request({
-      url:"https://apis.map.qq.com/place_cloud/search/nearby?location="+this.data.markers[0].latitude+","+this.data.markers[0].longitude+"&radius=1000&auto_extend=1&orderby=x.price desc&table_id=0oLe5K1g-3yZh7TvZ1&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX",
+      url:"https://apis.map.qq.com/place_cloud/search/nearby?location="+this.data.lat+","+this.data.lng+"&page_size=25&radius=5000&auto_extend=1&orderby=x.price desc&table_id=0oM1EczHDEG4thbnW1&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX",
       success:function (res){
         console.log(res)
         var result=res.data.result
         if(result.count===0){
           wx.showToast({
-            title: '一公里内无检测点！',
+            title: '五公里内无检测点！',
             icon: 'none',
             duration: 1500  
           })
+        }else{
+          result=res.data.result.data
+          for(var i=0;i<result.length;i++){
+            let lat=result[i].location.lat;
+            let lng=result[i].location.lng;
+            var index="markers["+(i+1)+"]";
+
+            //计算距离
+            var dis =Math.floor(comm.GetDistance(longitude,latitude,lng,lat));
+
+            disMin=Math.min(dis,disMin);
+            if(disMin===dis){
+              latMin=lat;
+              lngMin=lng;
+              indexMin=i+1;
+              titleMin=result[i].title;
+            }
+            that.setData({
+              [index]:{
+                id:1+i,
+                latitude:lat,
+                longitude:lng,
+                iconPath:"../../images/地图.png",
+                width:30,
+                height:30,
+                callout: {
+                  content:result[i].title,
+                  color: 'red',
+                  fontsize: 20,
+                  borderRadius: 5,
+                  borderWidth: 1,
+                  borderColor: 'white',
+                  padding: 2,
+                  display:'BYCLICK'
+                }
+              }
+            })
+          }
+          //计算两点的方向，第二个点相对于第一个点的方向
+          dirMin=comm.getDirection(latMin,lngMin,latitude,longitude);
+          //console.log(disMin,latMin,lngMin,indexMin,titleMin,dirMin)
         }
       }
-
     })
-
 },
+bindcallouttap(evt){
+  //console.log(evt.detail.markerId)
+  index=evt.detail.markerId
+  console.log(this.data.markers[index].latitude,this.data.markers[index].longitude)
+  lat=this.data.markers[index].latitude;
+  lng=this.data.markers[index].longitude;
+  name=this.data.markers[index].callout.content;
+  wx.navigateTo({
+    url: "/pages/maproute/maproute?&name="+name+"&lat="+lat+"&lng="+lng
+  })
+},
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
     var that=this
     wx.getLocation({
         success:function (res){

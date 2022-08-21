@@ -62,5 +62,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goUserInfo(){
+    wx.navigateToMiniProgram({
+      appId: 'wx65e2741d921d61bb',
+      path: 'page/index/index?id=123',
+    })
+  },
+  goMap(){
+    wx.switchTab({
+      url: '/pages/maps/maps',
+    })
+  },
+  goInfo(){
+    wx.navigateTo({
+      url:"/pages/userForm/userForm"
+    })
+  
+  },
+  goHeath(){
+    wx.navigateToMiniProgram({
+      appId: 'wx65e2741d921d61bb',
+      path: 'page/index/index?id=123',
+    })
+  
   }
 })

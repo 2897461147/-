@@ -13,10 +13,10 @@ Page({
   total:0,
   getList(format, data){
     request({
-      url: `/list?table_id=0oLe5K1g-3yZh7TvZ1&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
+      url: `/list?table_id=0oM1EczHDEG4thbnW1&page_size=25&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
       method: 'GET',
     },true).then(res=>{
-      console.log(res)
+      //console.log(res)
       this.total=Number(res.total)
       this.setData({
         cityList: [...this.data.cityList, ...res.list.result.data]

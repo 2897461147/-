@@ -6,7 +6,7 @@
       "pages/personal/personal",
       "pages/mapdetail/mapdetail",
       "pages/maproute/maproute",
-      "pages/addList/addList"
+      "pages/userForm/userForm"
     ],
     "requiredPrivateInfos":[
  

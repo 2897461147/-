@@ -19,7 +19,6 @@ handledSetdata(lng,lat,name){
     'latitude': lat,
     'longitude': lng
   });
-
   wx.navigateTo({
     url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
   });

@@ -1,23 +1,40 @@
 /* pages/mapslist/mapslist.wxss */
+
 .box{
-    padding: 10rpx;
+    padding: 17px 25px;
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+    border: 5px outset rgb(128, 202, 224);
+    background-color: #e7edf1;
+}
+.flag{
+    position: relative;
+    top: 5px;
+    left:2px;
+    width: 100rpx;
+    height: 100rpx;
 }
 .namebox{
-    padding: 20rpx;
+    position: relative;
+    top: 5px;
+    font-size: 19px;
 }
 .telbox{
-    padding: 10rpx;
+    padding: 6px 2px;
+    font-size: 14px;
 }
 input{
-  border: 2rpx solid black;
-  border-radius: 10rpx;
-  margin: 10rpx;
-  padding: 10rpx;
-  height: 10rpx;
- 
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  background-color: rgb(144, 151, 144);
-
+    border: 3px outset rgb(219, 127, 6);
+    border-radius: 10rpx;
+    margin: 10rpx;
+    padding: 10rpx;
+    height: 10rpx;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: rgb(240, 218, 179);
+    font-size: 19px;
+    text-align: center;
 }
