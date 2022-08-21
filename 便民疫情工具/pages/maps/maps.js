@@ -86,9 +86,25 @@ searchArea(){
               }
             })
           }
-          //计算两点的方向，第二个点相对于第一个点的方向
+           //计算两点的方向，第二个点相对于第一个点的方向
           dirMin=comm.getDirection(latMin,lngMin,latitude,longitude);
           //console.log(disMin,latMin,lngMin,indexMin,titleMin,dirMin)
+
+          wx.showModal({
+            title: '最佳核酸检测点为'+result[indexMin-1].title,
+            content: '它在你的'+dirMin+'方，是否前往',
+            success (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+                wx.navigateTo({
+                  url: "/pages/maproute/maproute?&name="+result[indexMin-1].title+"&lat="+latMin+"&lng="+lngMin
+                })
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+         
         }
       }
     })
