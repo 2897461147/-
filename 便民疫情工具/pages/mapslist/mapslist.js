@@ -1,19 +1,23 @@
 // pages/mapslist/mapslist.js
 import request from "../../utils/request";
 
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cityList:[]
+    cityList:[],
+    region:["山东省","菏泽市","牡丹区"],
+    isTrue:true
   },
   current: 1,
   total:0,
-  getList(format, data){
+/*  getList(format, data){
     request({
-      url: `/list?table_id=0oM1EczHDEG4thbnW1&page_size=25&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
+      url: `/data/list?table_id=0oM1EczHDEG4thbnW1&page_size=25&orderby=id&page_index=${this.current}&page_size=5&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
       method: 'GET',
     },true).then(res=>{
       //console.log(res)
@@ -22,11 +26,26 @@ Page({
         cityList: [...this.data.cityList, ...res.list.result.data]
       }, data)
     })
+  },*/
+  getList(format, data){ 
+    request({
+      url:`/search/region?page_index=${this.current}&region=${this.data.region}&filter=x.region==${this.data.region[2]}&table_id=0oM1EczHDEG4thbnW1&key=YLFBZ-47HLQ-R655T-GYRGY-BCZR6-NMFFX`,
+      },true).then(res=>{
+      console.log(res.list.result.data)
+      this.total=Number(res.total)
+      if(this.data.isTrue){
+        this.setData({
+          cityList: [...this.data.cityList, ...res.list.result.data]
+        })
+      }else{
+        this.setData({
+          cityList:res.list.result.data,
+          isTrue:true
+        })
+      }
+    })
   },
-  handleTap(){
-    this.triggerEvent("event")
-},
-
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -38,14 +57,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-      this.getList()
+    this.getList()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    this.getList()
+  onShow: function () {  
+      this.getList()   
   },
 
   /**
@@ -66,9 +85,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-      setTimeout(()=> {
-        wx.stopPullDownRefresh()
-      },1000)
+    setTimeout(()=> {
+      wx.stopPullDownRefresh()
+    },1000)
   },
 
   /**
@@ -99,5 +118,19 @@ Page({
     wx.navigateTo({
       url: `/pages/mapdetail/mapdetail?ud_id=${id}&name=${name}&lat=${lat}&lng=${lng}`
     })
+  },
+  bindRegionChange(e){
+    //console.log(e.detail.value)
+    //console.log(JSON.stringify(this.data.region) === JSON.stringify(e.detail.value))
+    if(JSON.stringify(this.data.region) === JSON.stringify(e.detail.value)){
+      this.setData({
+        isTrue:true
+      })
+    }else{
+    this.setData({
+      region: e.detail.value,
+      isTrue:false
+    })
+  }
   }
 })

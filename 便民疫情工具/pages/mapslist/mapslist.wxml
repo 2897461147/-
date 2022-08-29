@@ -1,12 +1,26 @@
 <!--pages/mapslist/mapslist.wxml-->
 <view class="top">
-    <input placeholder="核酸检测点搜索" bindtap="handleTap"></input>
+  <view class="section">
+  <picker mode="region" level="sub-distic" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+    
+  </picker>
+  <button id="btn3"  size="mini" bindtap="getList">查询{{region[2]}}核酸地</button>
+</view>
     <view class="box" wx:for="{{cityList}}" wx:key="index" bindtap="changePage" data-id="{{item.ud_id}}" data-name="{{item.address}}" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}">
         <view class="detail">
             <image class="flag" src="../../images/flag.png"/>
             <view>
+              <view class="namebox" >
+                    {{item.district}}
+                </view>
                 <view class="namebox" >
                     {{item.title}}
+                </view>
+                <view class="namebox" >
+                    详情地：{{item.address}}
                 </view>
                 <view class="telbox">
                     电话：{{item.tel}}

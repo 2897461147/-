@@ -51,6 +51,10 @@
   "libVersion": "2.19.4",
   "appid": "wxde6ef5c09ef41b61",
   "projectname": "%E4%BE%BF%E6%B0%91%E7%96%AB%E6%83%85%E5%B7%A5%E5%85%B7",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
   "condition": {
     "search": {
       "list": []
@@ -70,9 +74,5 @@
     "miniprogram": {
       "list": []
     }
-  },
-  "editorSetting": {
-    "tabIndent": "insertSpaces",
-    "tabSize": 2
   }
 }

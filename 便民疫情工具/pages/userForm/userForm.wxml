@@ -1,2 +1,48 @@
-<!--pages/userForm/userForm.wxml-->
-<text>pages/userForm/userForm.wxml</text>
+<view class="container">
+  <view class="bg-fff p-lr30 border-t">
+    <form  bindsubmit="submitUserinfo">
+        <view class="ipt-wrap border-b flex ai-center" >
+            <label for="" class="font14">姓名</label>
+            <input class="ml40 flex1" name="name" placeholder="输入姓名" bindblur="bindChange" data-key="formOne.name"/>
+        </view>
+
+        <view class="ipt-wrap border-b flex ai-center">
+            <label for="" class="font14">身份证号</label>
+            <input class="ml40 flex1" name="idcard" type="idcard" placeholder="输入身份证号" bindblur="bindChange" maxlength="18" data-key="formOne.idcard"/>
+        </view>
+
+        <view class="ipt-wrap border-b flex ai-center">
+          <label for="" class="font14">民族</label>
+            <picker bindchange="bindPickerChange" name="nation" value="{{nationIndex}}" range="{{nation_data}}" range-key="name">
+                <view class="picker" value='{{nation_data[nationIndex].name}}'>{{nation_data[nationIndex].name}}</view>
+            </picker>
+        </view>
+       
+
+        <view class="ipt-wrap border-b flex ai-center">
+            <label for="" class="font14">联系电话</label>
+            <input class="weui-input" name="tel" placeholder="输入联系电话" type="number" bindblur="bindChange"  maxlength="11" data-key="formOne.tele" value="{{formOne.tel}}"/>
+        </view>
+        <view class="ipt-wrap border-b flex ai-center jc-sb">
+            <view class="flex ai-center">
+                <label for="" class="font14">所在地区</label>
+                    <picker mode="region" bindchange="bindRegionChange" placeholder="省、市、区" name="region" value="{{region}}" custom-item="{{customItem}}">
+                        <view class="picker flex1 texthide">
+                            当前选择：{{region[0]}}{{region[1]}}{{region[2]}}
+                        </view>
+                     </picker>
+            </view>
+        </view>
+        <view class="ipt-wrap border-b">
+            <input name="" id="" class="textarea _w100 p-tb30 lh10" maxlength="50" placeholder="请输入详细地址，精确到门牌号"  name="detailAd"></input>
+        </view>
+
+        <view class="btn-area">
+
+        <button class="combtn font16 color-fff _w100 bg-btn" type="primary" formType="submit">确认</button>
+      </view>
+    </form>
+  </view>
+ 
+
+</view>

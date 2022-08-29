@@ -2,7 +2,7 @@ function request(params,isHeader=false){
   return new Promise((resolve,reject)=>{
           wx.request({
           ...params,
-          url:'https://apis.map.qq.com/place_cloud/data'+params.url,
+          url:'https://apis.map.qq.com/place_cloud'+params.url,
           success:(res)=>{
               if(isHeader){
               resolve({

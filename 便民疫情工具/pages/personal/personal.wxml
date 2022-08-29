@@ -1,18 +1,25 @@
 <!--pages/personal/personal.wxml-->
-<button wx:if="{{!userInfo}}" bindtap="login">授权登录</button>
-<view wx:else class="avatar">
-    <image src="{{userInfo.avatarUrl}}" ></image>
-    <view>{{userInfo.nickName}}</view>
-</view>
-<mp-cells ext-class="my-cells">
-    <mp-cell value="健康码" >
-        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleTap"></mp-icon>
-    </mp-cell>
-    <mp-cell value="个人行程码">
-        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleTap"></mp-icon>
-    </mp-cell>
-    <mp-cell value="核酸信息码">
-        <mp-icon  slot="icon" type="field" icon="arrow"  size="{{10}}" slot="footer" bindtap="handleCheckin"></mp-icon>
-    </mp-cell>
 
-</mp-cells>
+<button  wx:if="{{!userInfo}}" bindtap="login" type="primary">授权登录</button>
+<view wx:else class="avatar">
+    <image  src="{{userInfo.avatarUrl}}" ></image>
+    <view >{{userInfo.nickName}}</view>
+    
+</view>
+<view class="item" bindtap="handleTap">
+<text>健康码</text>
+<image class="image" src="/images/jiantou1.png" ></image>
+</view>
+<view class="item" bindtap="handleTap">
+<text>个人行程码</text>
+<image class="image" src="/images/jiantou1.png"></image>
+</view>
+<view class="item" bindtap="handleCheckin">
+<text>核酸信息码</text>
+<image class="image" src="/images/jiantou1.png" ></image>
+</view>
+
+<view class="item" bindtap="loginOut">
+<text>退出登录</text>
+<image class="image" src="/images/jiantou1.png" ></image>
+</view>

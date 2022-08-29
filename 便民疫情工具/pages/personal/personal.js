@@ -5,14 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:null
+    userInfo:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getStorageSync('user')
+   this.setData({
+     userInfo:user
+   })
   },
 
   /**
@@ -29,9 +32,7 @@ Page({
    */
   onShow: function () {
 
-    this.setData({
-      userInfo:wx.getStorageSync('token')
-    })
+    
   },
 
   /**
@@ -73,6 +74,7 @@ Page({
       desc: '用于完善会员资料',
       success: res=>{
         let user=res.userInfo
+        wx.setStorageSync('user',user)
         console.log("用户信息",user)
         this.setData({
           userInfo: user
@@ -83,6 +85,12 @@ Page({
       }
     })
   },
+ loginOut(){
+ this.setData({
+   userInfo:''
+ })
+ wx.setStorageSync('user', null)
+ },
   handleTap(){
     wx.navigateToMiniProgram({
       appId: 'wx65e2741d921d61bb',
@@ -91,7 +99,7 @@ Page({
   },
   handleCheckin(){
     wx.navigateTo({
-      url: '/pages/addList/addList',
+      url: '/pages/userForm/userForm',
     })
   }
 
